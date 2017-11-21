@@ -18,21 +18,21 @@ import vueAction.ActionFermeFenetre;
 import vueAction.ActionOuvrirPageWeb;
 import vuePopUpInterrogerJoueur.DemanderDebutPartie;
 /**
- * Une classe qui permet de démarrer le jeu sur une image et 3 boutons. C'est elle qui contient la 
- * méthode main nécessaire au lancement du programme.
+ * Une classe qui permet de dé–™arrer le jeu sur une image et 3 boutons. C'est elle qui contient la 
+ * mé– hode main né–essaire au lancement du programme.
  */
 public class MenuDebut extends JFrame
 {
 	/**
 	 * Le contructeur de cette classe, c'est une fenetre avec un JLabel pour afficher l'image de fond et 3 boutons.
-	 * Un permettant de lancer le jeu à proprement parler et les deux autres ouvrant un lien respectivement vers les 
-	 * règles et vers le site web du créateur du jeu.
+	 * Un permettant de lancer le jeu ï¿½ proprement parler et les deux autres ouvrant un lien respectivement vers les 
+	 * ré‘—les et vers le site web du cré–teur du jeu.
 	 */
 	public MenuDebut()
 	{
-		super("Pandocréon Divinae : le jeu des luttes divines");
+		super("Pandocrean Divinae : le jeu des luttes divines");
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-		this.setSize(dim);//donne les dim de l'écran
+		this.setSize(dim);//donne les dim de l'é–ran
 		this.setLayout(null);
 		JLabel background = null;
 		ImageIcon imageJ=null;

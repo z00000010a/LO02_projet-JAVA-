@@ -40,15 +40,15 @@ import vueAction.ActionKillThread;
 import vueBouton.BoutonCarte;
 
 /**
- *	Cette classe permet de montrer la vue de la main du joueur physique. Elle implémente Observer et l'utilise
- *pour observer le joueur physique. Elle implémente également Runnable pour que l'on puisse lancer un Thread à partir 
+ *	Cette classe permet de montrer la vue de la main du joueur physique. Elle implé–™ente Observer et l'utilise
+ *pour observer le joueur physique. Elle implé–™ente é–“alement Runnable pour que l'on puisse lancer un Thread ï¿½ partir 
  *d'un objet de cette classe.
  *
  */
 public class VueMainJoueurP extends JFrame  implements Observer, Runnable 
 { 
 	/**
-	 * Le choix du joueur pour ce tour, défini par la méthode demanderChoixAction(Thread t).
+	 * Le choix du joueur pour ce tour, dé–’ini par la mé– hode demanderChoixAction(Thread t).
 	 */
 	static int choix=5;
 	/**
@@ -56,21 +56,21 @@ public class VueMainJoueurP extends JFrame  implements Observer, Runnable
 	 */
 	private Joueur joueur;
 	/**
-	 * Le numéro du tour actuel, utile pour savoir comment mettre à jour la vue. Mis à jour par update(Observable, Object).
+	 * Le numé–o du tour actuel, utile pour savoir comment mettre ï¿½ jour la vue. Mis ï¿½ jour par update(Observable, Object).
 	 * @see vueAffichage.VueMainJoueurP#update(Observable, Object)
 	 */
 	private int numTour=-1; 
 	/**
-	 * Boolean, permet d'interdir au joueur d'utiliser les boutons de sa main en les désactivant en dehors de son tour.
-	 * Mis a jour par  Action Kill Thread, reset par la méthode run.
+	 * Boolean, permet d'interdir au joueur d'utiliser les boutons de sa main en les dé–Ÿactivant en dehors de son tour.
+	 * Mis a jour par  Action Kill Thread, reset par la mé– hode run.
 	 */
 	private static boolean boutonDisabled=false;
 	/**
-	 * Le Thread lancé à partir de cette objet, permet à la méthode ActionKillThread de l'interrompre.
+	 * Le Thread lancï¿½ ï¿½ partir de cette objet, permet ï¿½ la mé– hode ActionKillThread de l'interrompre.
 	 */
 	private static Thread t;
 	/**
-	 * Met à jour le boolean boutonDisabled. Appel la méthode synchroniser demanderChoixAction(Thread t)
+	 * Met ï¿½ jour le boolean boutonDisabled. Appel la mé– hode synchroniser demanderChoixAction(Thread t)
 	 * @see vueAffichage.VueMainJoueurP#demanderChoixAction(Thread)
 	 */
 	public void run() 
@@ -93,7 +93,7 @@ public class VueMainJoueurP extends JFrame  implements Observer, Runnable
 
 	}
 	/**
-	 * Le constructeur de cette classe. Appel la méthode initialisation() pour finir l'instanciation de l'objet.
+	 * Le constructeur de cette classe. Appel la mé– hode initialisation() pour finir l'instanciation de l'objet.
 	 * 
 	 * @param joueur le joueur que l'on observe
 	 * @see vueAffichage.VueMainJoueurP#initialisation()
@@ -103,15 +103,15 @@ public class VueMainJoueurP extends JFrame  implements Observer, Runnable
 		this.joueur = joueur;
 		this.setTitle("Votre main :");//titre fenetre
 		this.setSize(1920, 400); // taille
-		this.setLocation(0, 640); // position dasn l'écran, origine repère est dans coin supérieur gauche
+		this.setLocation(0, 640); // position dasn l'é–ran, origine repé‘¢e est dans coin supé–ieur gauche
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);     
 		this.setVisible(true);
 		setResizable(false);//peut pas modifier taille fenetre
 		initialisation();
 	}
 	/**
-	 * Créer les AfficheImage dont on a besoin pour afficher les cartes de la main du joueur. Si le joueur n'a
-	 * pas 7 cartes alors l'image affiché sera "default.jpg"
+	 * Cré–‘r les AfficheImage dont on a besoin pour afficher les cartes de la main du joueur. Si le joueur n'a
+	 * pas 7 cartes alors l'image affichï¿½ sera "default.jpg"
 	 */
 	public void initialisation() //throws InterruptedException
 	{
@@ -138,34 +138,34 @@ public class VueMainJoueurP extends JFrame  implements Observer, Runnable
 		validate();
 	}
 	/**
-	 * Permet de mettre à jour la carte du composant qui est à l'index précisé, en rajoutant les boutons adéquats.
-	 * @param carte La nouvelle carte à affiché
-	 * @param index	L'index du composants à mettre à jour
+	 * Permet de mettre ï¿½ jour la carte du composant qui est ï¿½ l'index pré–isï¿½, en rajoutant les boutons adé–uats.
+	 * @param carte La nouvelle carte ï¿½ affichï¿½
+	 * @param index	L'index du composants ï¿½ mettre ï¿½ jour
 	 * @throws InterruptedException
 	 */
 	public void changerCarte (CarteAction carte, int index) throws InterruptedException
 	{
 		((AfficheImage) this.getContentPane().getComponent(index)).changerCarteDeMain(carte);
 		this.update(getGraphics());
-		validate();//réaffiche les composants
+		validate();//ré–ffiche les composants
 		this.pack();
 	}
 	/**
-	 * Permet de mettre à jour la carte du composant qui est à l'index précisé, rajouté aucun bouton.
-	 * @param carte La nouvelle carte à affiché
-	 * @param index	L'index du composants à mettre à jour
+	 * Permet de mettre ï¿½ jour la carte du composant qui est ï¿½ l'index pré–isï¿½, rajoutï¿½ aucun bouton.
+	 * @param carte La nouvelle carte ï¿½ affichï¿½
+	 * @param index	L'index du composants ï¿½ mettre ï¿½ jour
 	 */
 	public void changerCarteSansBouton (CarteAction carte, int index)
 	{
 		((AfficheImage) this.getContentPane().getComponent(index)).changerCarteSansBouton(carte);
 		this.update(getGraphics());
-		validate();//réaffiche les composants
+		validate();//ré–ffiche les composants
 		this.pack();
 	}
 	/**
-	 * Permet de mettre à jour la main du joueur sans afficher aucun de ses boutons. 
-	 * @param choix Non utilisé
-	 * @param o		Non utilisé
+	 * Permet de mettre ï¿½ jour la main du joueur sans afficher aucun de ses boutons. 
+	 * @param choix Non utilisï¿½
+	 * @param o		Non utilisï¿½
 	 */
 	public void rafraichir(int choix, Observable o)
 	{
@@ -181,10 +181,10 @@ public class VueMainJoueurP extends JFrame  implements Observer, Runnable
 		}
 	}
 	/**
-	 * Permet de désactiver tout les boutons de toutes les cartes de la main du joueur.
+	 * Permet de dé–Ÿactiver tout les boutons de toutes les cartes de la main du joueur.
 	 */
 	public void desactiverBoutonMain()
-	{	//va itérer sur tout les affiche image
+	{	//va ité–er sur tout les affiche image
 		for (int i = 0; i < ((JoueurPhysique) Partie.getJoueurHumain()).getVueMainJoueur().getContentPane().getComponents().length; i++) 
 		{
 			if (((JoueurPhysique) Partie.getJoueurHumain()).getVueMainJoueur().getContentPane().getComponents()[i] instanceof AfficheImage )
@@ -200,7 +200,7 @@ public class VueMainJoueurP extends JFrame  implements Observer, Runnable
 		}
 	}
 	/**
-	 * Permet de remplacer les bouton du composant à l'index i par un bouton défausser
+	 * Permet de remplacer les bouton du composant ï¿½ l'index i par un bouton dé–’ausser
 	 * @param carte La carte que l'on souhaite remplacer mettre sur ce composant.
 	 * @param i L'index du composant que l'on souhaite modifier
 	 */
@@ -208,12 +208,12 @@ public class VueMainJoueurP extends JFrame  implements Observer, Runnable
 	{
 		((AfficheImage) this.getContentPane().getComponent(i)).changerCarteDefausser(carte);
 		this.update(getGraphics());
-		validate();//réaffiche les composants
+		validate();//ré–ffiche les composants
 		this.pack();
 	}
 	
 	/**
-	 * Permet d'appliquer la méthode changerCarteDefausser(CarteAction carte, int i) à tous les composants 
+	 * Permet d'appliquer la mé– hode changerCarteDefausser(CarteAction carte, int i) ï¿½ tous les composants 
 	 * AffichImage de cet objet.
 	 * @see vueAffichage.VueMainJoueurP#changerCarteDefausser(CarteAction, int)
 	 */
@@ -224,13 +224,13 @@ public class VueMainJoueurP extends JFrame  implements Observer, Runnable
 		while (iteC.hasNext())
 		{
 			CarteAction carte = iteC.next();	
-			changerCarteDefausser(carte, listeC.indexOf(carte));	//utilise la méthode pour appeler changerDeCarteDefausser de AfficheImage
+			changerCarteDefausser(carte, listeC.indexOf(carte));	//utilise la mé– hode pour appeler changerDeCarteDefausser de AfficheImage
 		}
 	}
 	
 	/**
 	 * Affiche la main du joueur sans aucun bouton, utile pour piocher des carte puis afficher la main du joueur
-	 * Appel la méthode changerCarteSansBouton(CarteAction, int) pour toutes les composants de cet objet.
+	 * Appel la mé– hode changerCarteSansBouton(CarteAction, int) pour toutes les composants de cet objet.
 	 * @see vueAffichage.VueMainJoueurP#changerCarteSansBouton(CarteAction, int)
 	 */
 	public void afficherMainSansBouton()
@@ -244,8 +244,8 @@ public class VueMainJoueurP extends JFrame  implements Observer, Runnable
 		}
 	}
 	/**
-	 * Permet en début de tour de demander quel type d'action effectuer.
-	 * L'action de chaque bouton update la méthode du joueur humain de manière différente. Ainsi le joueur fait les actions qui l'interresse,
+	 * Permet en dé–ut de tour de demander quel type d'action effectuer.
+	 * L'action de chaque bouton update la mé– hode du joueur humain de manié‘¢e diffé–ente. Ainsi le joueur fait les actions qui l'interresse,
 	 * puis permet au Thread principal de reprendre son cours avec le bouton "Fin du tour"
 	 * @throws InterruptedException 
 	 * @throws IOException 
@@ -256,7 +256,7 @@ public class VueMainJoueurP extends JFrame  implements Observer, Runnable
 				JFrame frameChoix = new JFrame("Choisissez le type d'action que vous voulez effectuer pendant ce tour");
 				Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 				frameChoix.setLocation(dim.width/2-frameChoix.getSize().width/2, dim.height/2-frameChoix.getSize().height/2);
-				JButton boutonDefausser = new JButton("Défausser des cartes");
+				JButton boutonDefausser = new JButton("DÃ©fausser des cartes");
 				JButton boutonPiocher = new JButton("Completer ma main");
 				JButton boutonJouer = new JButton("Utiliser mes cartes");
 				JButton finTour = new JButton ("Fin du tour");
@@ -288,8 +288,8 @@ public class VueMainJoueurP extends JFrame  implements Observer, Runnable
 		}
 	}
 	/**
-	 * Cette méthode permet au joueur d'utiliser ces cartes. Elle va appliquer la méthode changerCarte(CarteAction, int)
-	 * à tous les composants de cet objet.
+	 * Cette mé– hode permet au joueur d'utiliser ces cartes. Elle va appliquer la mé– hode changerCarte(CarteAction, int)
+	 * ï¿½ tous les composants de cet objet.
 	 * @see vueAffichage.VueMainJoueurP#changerCarte(CarteAction, int)
 	 */
 	public void afficherMainUtiliser()
@@ -308,8 +308,8 @@ public class VueMainJoueurP extends JFrame  implements Observer, Runnable
 		}
 	}
 	/**
-	 * En fonction du choix du joueur cette méthode va afficher la main du joueur avec ou sans boutons.
-	 * Appeler automatiquement par la méthode notifyObservers() du joueur humain.
+	 * En fonction du choix du joueur cette mé– hode va afficher la main du joueur avec ou sans boutons.
+	 * Appeler automatiquement par la mé– hode notifyObservers() du joueur humain.
 	 * @see modelJoueur.JoueurPhysique#notifyObservers()
 	 */
 	public void update(Observable o, Object arg) {

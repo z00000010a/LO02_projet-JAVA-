@@ -19,7 +19,7 @@ import javax.swing.text.NumberFormatter;
 
 import vueAction.ActionDemarrerJeu;
 /**
- * Cette classe génère la seconde fenètre du jeu, celle qui va récuper le nom du joueur et le nombre de joueur virtuel qu'il veut affronter
+ * Cette classe gé–šé‘¢e la seconde fené‘¤re du jeu, celle qui va ré–uper le nom du joueur et le nombre de joueur virtuel qu'il veut affronter
  *
  */
 public class DemanderDebutPartie
@@ -33,18 +33,18 @@ public class DemanderDebutPartie
 	 */
 	private static int nbJV;
 	/**
-	 *  Le constructeur de la classe, elle est appeler par la classe menuDebut lorsque l'on appuie sur le bouton jouer. Petite spécificité :
-	 *  ce n'est pas un text field mais un NumberFormatter qui est utilisé pour le nombre de joueur, ce qui permet de forcer le joueur 
+	 *  Le constructeur de la classe, elle est appeler par la classe menuDebut lorsque l'on appuie sur le bouton jouer. Petite spé–ificitï¿½ :
+	 *  ce n'est pas un text field mais un NumberFormatter qui est utilisï¿½ pour le nombre de joueur, ce qui permet de forcer le joueur 
 	 *  a ne rentrer que des entier compris entre 1 et 8. 
 	 */
 	public DemanderDebutPartie()
 	{
-		JFrame frame = new JFrame("Entrer ces informations pour débuter la partie");
+		JFrame frame = new JFrame("Entrer ces informations pour dé–uter la partie");
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 		
 		frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.PAGE_AXIS));
 		
-		JTextField nomJoueur = new JTextField("Entrer votre nom", 25);
+		final JTextField nomJoueur = new JTextField("Entrer votre nom", 25);
 	    NumberFormat format = NumberFormat.getInstance();
 	    NumberFormatter formatter = new NumberFormatter(format);
 	    formatter.setValueClass(Integer.class);
@@ -52,8 +52,8 @@ public class DemanderDebutPartie
 	    formatter.setMaximum(8);
 	    formatter.setAllowsInvalid(false);
 	    formatter.setCommitsOnValidEdit(true);
-	    JFormattedTextField nbJoueurVirtual = new JFormattedTextField(formatter);
-		JLabel label = new JLabel("Entrer le nombre d'adversaires que vous désirez");
+	    final JFormattedTextField nbJoueurVirtual = new JFormattedTextField(formatter);
+		JLabel label = new JLabel("Entrer le nombre d'adversaires que vous dé–Ÿirez");
 		JButton valider = new JButton("valider");
 		
 		valider.addActionListener(new ActionListener () {public void actionPerformed(ActionEvent arg0) 

@@ -8,18 +8,18 @@ import javax.swing.JFrame;
 
 import vuePopUpInterrogerJoueur.DemanderUtiliserCarteSansThread;
 /**
- * Cette classe est un JButton qui contient un numéro de joueur, uniquement instancié par la classe DemanderUtiliserCarteSansThread.
+ * Cette classe est un JButton qui contient un numé–žo de joueur, uniquement instanciï¿½ par la classe DemanderUtiliserCarteSansThread.
  * @see vuePopUpInterrogerJoueur.DemanderUtiliserCarteSansThread
  */
 public class BoutonNumJoueur extends JButton {
 	/**
-	 * Le constructeur de la classe. Créer un bouton avec le numéro du joueur dessus. Une action est automatiquement 
-	 * implémentée sur ce bouton : modifier l'attribut statique choixJoueur de DemanderUtiliserCarteSansThread.
-	 * @param num Un entier représentant le numéro du joueur
+	 * Le constructeur de la classe. Cré–‘r un bouton avec le numé–žo du joueur dessus. Une action est automatiquement 
+	 * implé–™enté–‘ sur ce bouton : modifier l'attribut statique choixJoueur de DemanderUtiliserCarteSansThread.
+	 * @param num Un entier repré–Ÿentant le numé–žo du joueur
 	 */
-	public BoutonNumJoueur(int num)
+	public BoutonNumJoueur(final int num)
 	{
-		super("Joueur n°"+num);
+		super("Joueur n'"+num);
 		this.addActionListener( new ActionListener(){public void actionPerformed(ActionEvent e) {DemanderUtiliserCarteSansThread.setChoixJoueur(num);}} );
 	}
 }

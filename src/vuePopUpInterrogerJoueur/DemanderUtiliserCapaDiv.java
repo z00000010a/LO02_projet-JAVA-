@@ -14,8 +14,8 @@ import modelJoueur.Joueur;
 import vueAction.ActionKillThreadFenetreInterrogeJoueur;
 import vueAction.ActionUtiliserCapaDiv;
 /**
- * Cette classe permet de demander au joueur si il veut utiliser sa capacité divine. Le fait qu'elle implemente runnable permet de stopper le thread 
- * principal, de faire les actions éventuelle demander par le joueur puis de reprendre le thread principal.
+ * Cette classe permet de demander au joueur si il veut utiliser sa capacitï¿½ divine. Le fait qu'elle implemente runnable permet de stopper le thread 
+ * principal, de faire les actions é–¢entuelle demander par le joueur puis de reprendre le thread principal.
  *
  */
 public class DemanderUtiliserCapaDiv implements Runnable
@@ -23,8 +23,8 @@ public class DemanderUtiliserCapaDiv implements Runnable
 	private static Thread t;
 	private static Divinite div;
 	/**
-	 * Créer une instance avec la divinité du joueur humain en attribut
-	 * @param divi la divinité dont on souhaite demander au joueur si il souhaite utiliser sa capacité
+	 * Cré–‘r une instance avec la divinitï¿½ du joueur humain en attribut
+	 * @param divi la divinitï¿½ dont on souhaite demander au joueur si il souhaite utiliser sa capacitï¿½
 	 */
 	public DemanderUtiliserCapaDiv(Divinite divi) 
 	{
@@ -32,7 +32,7 @@ public class DemanderUtiliserCapaDiv implements Runnable
 	}
 	@Override
 	/**
-	 * La méthode appel la méthode demander() de cette classe.
+	 * La mé– hode appel la mé– hode demander() de cette classe.
 	 * @see vuePopUpInterrogerJoueur.DemanderUtiliserCapaDiv#demander(t)
 	 */
 	public void run() 
@@ -45,10 +45,10 @@ public class DemanderUtiliserCapaDiv implements Runnable
 		}
 	}
 	/**
-	 * Cette méthode est synchronisé sur le l'objet Test.VerrouThread sur lequel toutes les méthodes runnable sont synchronisé, ce qui permet de 
-	 * ne pas avoir plusieurs thread qui s'éxécute en même temps. L'action ActionUtiliserCapaDiv lancera la capacité de la divinité du joueur si 
+	 * Cette mé– hode est synchronisï¿½ sur le l'objet Test.VerrouThread sur lequel toutes les mé– hodes runnable sont synchronisï¿½, ce qui permet de 
+	 * ne pas avoir plusieurs thread qui s'é–¤é–ute en mé˜­e temps. L'action ActionUtiliserCapaDiv lancera la capacitï¿½ de la divinitï¿½ du joueur si 
 	 * il choisit de le faire. 
-	 * @param t Permet de le transmetre à l'action ActionKillThreadFenetreInterrogeJoueur , qui elle interrompera le thread et fermera la fenetre
+	 * @param t Permet de le transmetre ï¿½ l'action ActionKillThreadFenetreInterrogeJoueur , qui elle interrompera le thread et fermera la fenetre
 	 * @throws InterruptedException
 	 * @see vueAction.ActionKillThreadFenetreInterrogeJoueur
 	 */
@@ -56,13 +56,13 @@ public class DemanderUtiliserCapaDiv implements Runnable
 	{	
 		synchronized (Test.getVerrouThread())
 		{
-			//création de la fenètre qui va acceuillir les boutons
-			JFrame frame = new JFrame("Voulez-vous utiliser votre capacité divine ?");
+			//cré–tion de la fené‘¤re qui va acceuillir les boutons
+			JFrame frame = new JFrame("Voulez-vous utiliser votre capacitÃ© divine ?");
 			Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 			frame.setLocation(dim.width/2, dim.height/2);
 			frame.setLayout(new FlowLayout());
-			JButton boutonOui = new JButton ("Utiliser ma capacité");
-			JButton boutonNon = new JButton ("Ne pas utiliser ma capacité");
+			JButton boutonOui = new JButton ("Utiliser ma capacitÃ©");
+			JButton boutonNon = new JButton ("Ne pas utiliser ma capacitÃ©");
 			boutonOui.addActionListener(new ActionUtiliserCapaDiv(div));
 			boutonOui.addActionListener(new ActionKillThreadFenetreInterrogeJoueur(t, frame));
 			boutonNon.addActionListener(new ActionKillThreadFenetreInterrogeJoueur(t, frame));

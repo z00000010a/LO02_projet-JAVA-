@@ -28,7 +28,7 @@ import modelJoueur.JoueurVirtual;
 import java.awt.Dimension;
 /**
  * Un fenetre qui va contenir tout les VueEspace de chaque joueur, ainsi qu'un VueStatJoueur et un VueEspaceCentral.
- * Elle les stock dans un JTabbedPane, ce qui permet de naviguer entre ces vues avec simplicité. Elle est implémenté 
+ * Elle les stock dans un JTabbedPane, ce qui permet de naviguer entre ces vues avec simplicitï¿½. Elle est implé–™entï¿½ 
  * avec le patron de conception Singleton.
  *@see vueAffichage.VueEspace
  *@see vueAffichage.VueStatJoueur
@@ -36,7 +36,7 @@ import java.awt.Dimension;
  */
 public class ChoixEspace extends JFrame 
 {	/**
-	* Un attribut contenant les joueur, utilisé pour créer afficher les VueEspace qui sont contenu dans ces joueurs
+	* Un attribut contenant les joueur, utilisï¿½ pour cré–‘r afficher les VueEspace qui sont contenu dans ces joueurs
 	* 
 	*/
 	private Joueur [] lesJoueurs;
@@ -46,9 +46,9 @@ public class ChoixEspace extends JFrame
 	private VueStatJoueur vueStatJoueur;
 
 	/**
-	 * Ce constructeur va créer la fenètre principale et appeler la méthode initier avec comme arguments toutes
+	 * Ce constructeur va cré–‘r la fené‘¤re principale et appeler la mé– hode initier avec comme arguments toutes
 	 * les vues des espaces de chaque joueur de la partie.
-	 * @param tabJ Les joueur dont on va récupérer l'attribut EspaceJoueur
+	 * @param tabJ Les joueur dont on va ré–upé–er l'attribut EspaceJoueur
 	 * @see vueAffichage.ChoixEspace#initier(VueEspaceCentral, VueEspace[])
 	 */
 	private ChoixEspace ( Joueur [] tabJ)
@@ -56,7 +56,7 @@ public class ChoixEspace extends JFrame
 		super("Choississer votre espace");
 		this.lesJoueurs = tabJ;
 		//this.VueDesJoueurs = new VueEspace[lesJoueurs.length];
-		this.setTitle("Pandocréon Divinae : Le jeu des luttes divines");
+		this.setTitle("Pandocraen Divinae : Le jeu des luttes divines");
 		this.setSize(new Dimension(1920,680));
 		this.setLocation(0, 0);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   
@@ -74,7 +74,7 @@ public class ChoixEspace extends JFrame
 	 */
 	private static ChoixEspace instanceChoixEspace;
 	/**
-	 * La méthode pour obtenir l'instance
+	 * La mé– hode pour obtenir l'instance
 	 * @param tabJ les joueurs dont on souhaite figurer l'espace
 	 * @return	l'instance de cette classe
 	 */
@@ -88,7 +88,7 @@ public class ChoixEspace extends JFrame
 	}
 	
 	/**
-	 * Cette méthode va remplir la fenetre créer par le constructeur. Elle va stocker ces VueEspace dans un JTabbedPane
+	 * Cette mé– hode va remplir la fenetre cré–‘r par le constructeur. Elle va stocker ces VueEspace dans un JTabbedPane
 	 * @param vueEspaceCentral
 	 * @param tabEspaceJ
 	 * @see vueAffichage.ChoixEspace#ChoixEspace(Joueur[])
@@ -105,7 +105,7 @@ public class ChoixEspace extends JFrame
 				j = lesJoueurs[i];
 			}
 		}
-		onglets.addTab("Vos données", ((JoueurPhysique) j).getVueStatJoueur());
+		onglets.addTab("Vos donnÃ©s", ((JoueurPhysique) j).getVueStatJoueur());
 		this.vueStatJoueur=((JoueurPhysique) j).getVueStatJoueur();
 		onglets.addTab("Espace central", vueEspaceCentral);
 		for (int i = 0; i < tabEspaceJ.length; i++) 
@@ -125,8 +125,8 @@ public class ChoixEspace extends JFrame
 	}
 	
 	/**
-	 * Un méthode qui va être appelé par les VueEspace lorsqu'ils auront besoin de se mettre à jour. Automatiquement
-	 * appelée par la méthode update de ces derniers.
+	 * Un mé– hode qui va é˜¾re appelï¿½ par les VueEspace lorsqu'ils auront besoin de se mettre ï¿½ jour. Automatiquement
+	 * appelé–‘ par la mé– hode update de ces derniers.
 	 * @see vueAffichage.VueEspace#update(Observable, Object)
 	 */
 	public void rafraichirSimple()

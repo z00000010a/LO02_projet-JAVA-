@@ -18,33 +18,33 @@ import modelJoueur.Joueur;
 import vueAction.ActionFermeFenetre;
 import vueBouton.BoutonNumJoueur;
 /**
- * Cette classe permet d'interroger le joueur pendant qu'il joue sa phase. Ses méthodes ne sont pas synchronisées car
- * elle doivent être appelé pendant la phase du joueur humain, un moment ou le déroulement de la partie est figé, 
+ * Cette classe permet d'interroger le joueur pendant qu'il joue sa phase. Ses mé– hodes ne sont pas synchronisé–‘s car
+ * elle doivent é˜¾re appelï¿½ pendant la phase du joueur humain, un moment ou le dé–oulement de la partie est figï¿½, 
  * en attente de la fin du tour du joueur humain.
- * Cette classe est instancié par toutes les carte Croyant et GuideSpirituel quand elles sont sacrifier et les carte DeusEx quand
- * elles sont utilisées.
+ * Cette classe est instanciï¿½ par toutes les carte Croyant et GuideSpirituel quand elles sont sacrifier et les carte DeusEx quand
+ * elles sont utilisé–‘s.
  *
  */
 public class DemanderUtiliserCarteSansThread 
 {
 	/**
-	 * Le choix du joueur, modifié par les BoutonNumJoueur. Et récupéré grâce aux getters par les cartes qui instancie cette classe pour 
-	 * récupérer le choix du joueur.
+	 * Le choix du joueur, modifiï¿½ par les BoutonNumJoueur. Et ré–upé–ï¿½ gréˆ‰e aux getters par les cartes qui instancie cette classe pour 
+	 * ré–upé–er le choix du joueur.
 	 */
 	private static  int choixJoueur;
 	/**
-	 * La linkedList des joueurs, permet de créer autant de BoutonJoueur qu'il y a de joueur à cibler pour la 
-	 * capacité de la carte qui à instanciée la classe. Spécifié par le constructeur.
+	 * La linkedList des joueurs, permet de cré–‘r autant de BoutonJoueur qu'il y a de joueur ï¿½ cibler pour la 
+	 * capacitï¿½ de la carte qui ï¿½ instancié–‘ la classe. Spé–ifiï¿½ par le constructeur.
 	 */
 	private  LinkedList<Joueur> listeJ;
 	/**
-	 * La carte qui à instancié la classe. Utilisé par la méthode demander(). Spécifiée par le constructeur.
+	 * La carte qui ï¿½ instanciï¿½ la classe. Utilisï¿½ par la mé– hode demander(). Spé–ifié–‘ par le constructeur.
 	 */
 	private static  CarteAction carte;
 	/**
 	 * Le constructeur de la classe.
-	 * @param listeJoueur La LinkedList de joueur que l'on souhaite proposer au joueur pour qu'il désigne l'un d'entre eux
-	 * @param carte2	La CarteAction qui à instancié l'objet. Elle sera utilisée par la méthode appelerSacrifice() de 
+	 * @param listeJoueur La LinkedList de joueur que l'on souhaite proposer au joueur pour qu'il dé–Ÿigne l'un d'entre eux
+	 * @param carte2	La CarteAction qui ï¿½ instanciï¿½ l'objet. Elle sera utilisé–‘ par la mé– hode appelerSacrifice() de 
 	 * cette classe. 
 	 * @see vuePopUpInterrogerJoueur.DemanderUtiliserCarteSansThread#appelerSacrifice()
 	 */
@@ -55,8 +55,8 @@ public class DemanderUtiliserCarteSansThread
 	}
 	
 	/**
-	 * Cette méthode va créer autant de bouton qu'il y a de joueur dans l'attribut listeJ de cette classe et va ajouter
-	 * un bouton Valider pour que le joueur valide son choix. La validation entrainera l'appel de la méthode AppelerSacrifice().
+	 * Cette mé– hode va cré–‘r autant de bouton qu'il y a de joueur dans l'attribut listeJ de cette classe et va ajouter
+	 * un bouton Valider pour que le joueur valide son choix. La validation entrainera l'appel de la mé– hode AppelerSacrifice().
 	 * Elle renvoie un pop up d'erreur si listeJ est vide.
 	 */
 	public void demander()
@@ -64,7 +64,7 @@ public class DemanderUtiliserCarteSansThread
 			if (listeJ.size()!=0)
 			{
 				DemanderUtiliserCarteSansThread.choixJoueur=-1;
-				JFrame frame = new JFrame("Choisissez le joueur que vous désirer ciblez :");
+				JFrame frame = new JFrame("Choisissez le joueur que vous dÃ©irer ciblez :");
 				Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 				frame.setLocation(dim.width/2, dim.height/2 + 100);
 				frame.setLayout(new FlowLayout());
@@ -99,7 +99,7 @@ public class DemanderUtiliserCarteSansThread
 		
 	}
 	/**
-	 * Cette méthode va appeler la méthode sacrifier(int i) de la carte (Note : cette méthode est redefini pour chaque carte). Avec en argument le numéro du joueur que le joueur 
+	 * Cette mé– hode va appeler la mé– hode sacrifier(int i) de la carte (Note : cette mé– hode est redefini pour chaque carte). Avec en argument le numé–o du joueur que le joueur 
 	 * humain souhaite cibler avec cette carte.
 	 * @see modelCarte.CarteAction#sacrifier(int)
 	 */

@@ -36,13 +36,13 @@ public class VueStatJoueur extends JPanel implements Observer
 		this.textePointNuit = new JLabel ("Point d'action Nuit : "+joueur.getPointActionNuit());
 		if (Partie.getMeilleurJoueur()==null)
 		{
-			this.texteNombrePrieres = new JLabel ("Vous avez actuellement "+joueur.compterLesPrieres()+" prières.\n"
+			this.texteNombrePrieres = new JLabel ("Vous avez actuellement "+joueur.compterLesPrieres()+" pri¨¨res.\n"
 					+ " Il n'y a pas de meilleur joueur actuellement.");
 		}
 		else if (Partie.verifieSiJoueurDansMoyenneSup(joueur) || Partie.getMeilleurJoueur().equals(joueur))
 		{
 			this.texteNombrePrieres = new JLabel ("Vous avez actuellement "+joueur.compterLesPrieres()+" prières.\n"
-					+ " Si vous placez une apocalypse maintenant cela vous sera bénéfique.");
+					+ " Si vous placez une apocalypse maintenant cela vous sera win.");
 		}
 		else if (Partie.verifieSiJoueurDansMoyenneSup(joueur)==false ||Partie.getMeilleurJoueur()!= joueur)
 		{
